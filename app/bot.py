@@ -61,8 +61,28 @@ def start():
 
                 c1 = guests(
                     id=user_id,
+                    surname='',
+                    name='',
+                    patronymic='',
+                    phone_number='',
+                    tag='',
+                    vk_link='',
+                    first_group=False,
+                    second_group=False,
+                    third_group=False,
+                    fourth_group=False,
+                    fifth_group=False,
+                    sixth_group=False,
+                    seventh_group=False,
+                    eighth_group=False,
+                    ninth_group=False,
+                    tenth_group=False,
+                    eleventh_grup=False,
+                    twelfth_group=False,
+                    thirteenth_group=False,
                 )
                 session.add(c1)
+
                 session.commit()
 
                 if result:
