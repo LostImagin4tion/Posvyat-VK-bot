@@ -59,6 +59,12 @@ def start():
 
                 result = vk_session.method("groups.isMember", {"group_id": group_id[0]["id"], 'user_id': user_id})
 
+                c1 = guests(
+                    id=user_id,
+                )
+                session.add(c1)
+                session.commit()
+
                 if result:
                     send_message(vk_session, user_id, "Спасибо, что вступили в наше сообщество!")
                     #в колонке с вступили надо отметить тру
