@@ -87,7 +87,7 @@ def start():
                         user_setting.first_group = True
                         user_setting.second_group = False
                     else:
-                        user_setting = guests(vk_link=user_id, first_group=True, second_group=False)
+                        user_setting = guests(vk_link=str(user_id), first_group=True, second_group=False)
                         session.add(user_setting)
                     session.commit()
 
