@@ -59,54 +59,35 @@ def start():
 
                 result = vk_session.method("groups.isMember", {"group_id": group_id[0]["id"], 'user_id': user_id})
 
-                c1 = guests(
-                    id=user_id,
-                    surname='',
-                    name='',
-                    patronymic='',
-                    phone_number='',
-                    tag='',
-                    vk_link='',
-                    first_group=False,
-                    second_group=False,
-                    third_group=False,
-                    fourth_group=False,
-                    fifth_group=False,
-                    sixth_group=False,
-                    seventh_group=False,
-                    eighth_group=False,
-                    ninth_group=False,
-                    tenth_group=False,
-                    eleventh_grup=False,
-                    twelfth_group=False,
-                    thirteenth_group=False,
+                new_guest = guests(
+                    vk_link=str(user_id),
                 )
-                session.add(c1)
+                session.add(new_guest)
 
                 session.commit()
 
                 if result:
                     send_message(vk_session, user_id, "Спасибо, что вступили в наше сообщество!")
-                    #в колонке с вступили надо отметить тру
-                    user_setting = session.query(guests).filter_by(id=user_id).first()
+
+                    user_setting = session.query(guests).filter_by(vk_link=str(user_id)).first()
 
                     if user_setting:
                         user_setting.first_group = True
                         user_setting.second_group = True
                     else:
-                        user_setting = guests(id=user_id, first_group=True, percent=True)
+                        user_setting = guests(vk_link=user_id, first_group=True, percent=True)
                         session.add(user_setting)
                     session.commit()
-
+                    print(user_setting)
                 else:
                     send_message(vk_session, user_id, "Вы не вступили в сообщество.")
-                    user_setting = session.query(guests).filter_by(id=user_id).first()
+                    user_setting = session.query(guests).filter_by(vk_link=str(user_id)).first()
 
                     if user_setting:
                         user_setting.first_group = True
                         user_setting.second_group = False
                     else:
-                        user_setting = guests(id=user_id, first_group=True, second_group=False)
+                        user_setting = guests(vk_link=user_id, first_group=True, second_group=False)
                         session.add(user_setting)
                     session.commit()
 
