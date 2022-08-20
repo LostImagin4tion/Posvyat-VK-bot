@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     DIR_NAME: str = os.path.dirname(__file__)
 
     VK_TOKEN: Optional[str]
-    TECH_SUPPORT_VK_ID: Optional
+    TECH_SUPPORT_VK_ID: Optional[str]
 
     DB_PATH: Optional[str]
 
@@ -31,7 +31,10 @@ class Settings(BaseSettings):
         fields = {
             'GOOGLE_TABLE_ID': {'env': 'GOOGLE_TABLE_ID'},
             'GOOGLE_CREDS_PATH': {'env': 'GOOGLE_CREDS_PATH'},
-            'GOOGLE_TOKEN_PATH': {'env': 'GOOGLE_TOKEN_PATH'}
+            'GOOGLE_TOKEN_PATH': {'env': 'GOOGLE_TOKEN_PATH'},
+            'VK_TOKEN': {'env': 'VK_TOKEN'},
+            'DB_PATH': {'env': 'DB_PATH'}
+
         }
 
 

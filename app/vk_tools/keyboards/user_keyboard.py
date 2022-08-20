@@ -1,6 +1,6 @@
-from app.vk_tools.keyboards.keyboard import Keyboard
+from vk_tools.keyboards.keyboard import Keyboard
 
-main_keyboard = Keyboard(buttons=['Информация']).get()
+main_keyboard = Keyboard(buttons=['Информация', 'Что я пропустил?', 'Обратиться в техническую поддержку']).get()
 
 
 def info_keyboard(user_query):

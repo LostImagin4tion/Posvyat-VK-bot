@@ -1,9 +1,9 @@
 from sqlalchemy.orm import Session
 import vk_api
 
-from app.create_db import TechSupport
-from send_message import send_message
-from app.config import settings
+from create_db import TechSupport
+from vk_events import send_message
+from config import settings
 
 
 def open_issues(

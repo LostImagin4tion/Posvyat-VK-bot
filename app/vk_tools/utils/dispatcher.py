@@ -4,10 +4,10 @@ import vk_api
 from sqlalchemy.orm import Session
 from vk_api.bot_longpoll import VkBotEvent
 
-from app.vk_tools.utils import admin_commands
-from app.vk_events import send_message
-from app.vk_events.mailing import messages as start_mailing
-from app.vk_events.issues import open_issues
+from vk_tools.utils import admin_commands
+from vk_events import send_message
+from vk_events.mailing import messages as start_mailing
+from vk_events.issues import open_issues
 
 
 def call_admin_command(

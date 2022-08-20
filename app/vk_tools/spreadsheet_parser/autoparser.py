@@ -1,7 +1,7 @@
 import schedule
 from sqlalchemy.orm import Session
 
-from app.create_db import Guests
+from create_db import Guests
 from spreadsheet_parser import get_data
 
 # interval between spreadsheet check

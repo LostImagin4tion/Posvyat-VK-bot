@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from app.create_db import Orgs
+from create_db import Orgs
 
 
 def is_admin(

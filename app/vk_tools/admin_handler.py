@@ -2,7 +2,7 @@ import re
 
 from sqlalchemy.orm import Session
 
-from app.create_db import Info
+from create_db import Info
 
 
 def admin_add_info(session: Session, text: str) -> True:

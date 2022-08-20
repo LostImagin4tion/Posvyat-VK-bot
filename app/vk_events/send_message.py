@@ -4,8 +4,8 @@ import vk_api
 import time
 from typing import Optional, List
 
-from app.config import settings
-from app.create_db import get_session, engine, Guests, Orgs
+from config import settings
+from create_db import get_session, engine, Guests, Orgs
 
 
 def send_message(

@@ -6,10 +6,10 @@ from sqlalchemy import desc
 from sqlalchemy.orm import Session
 from vk_api.bot_longpoll import VkBotEvent
 
-from app.vk_events import send_message
-from app.vk_tools import admin_add_info
-from app.create_db import Guests, Orgs, Groups, Sendings, Command
-from app.vk_tools.utils.make_domain import make_domain
+from vk_events import send_message
+from vk_tools import admin_add_info
+from create_db import Guests, Orgs, Groups, Sendings, Command
+from vk_tools.utils.make_domain import make_domain
 
 
 # args = [quantity]
